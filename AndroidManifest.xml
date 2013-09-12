@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.CARDZ"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="17"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher"
+            android:theme="@android:style/Theme.Holo.Light">
+        <activity android:name=".MainMenu"
+                  android:label="main_menu"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="MyActivity"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".TopicList"
+                  android:label="Choose Your Topic">
+        </activity>
+        <activity android:name=".MakeCard"
+                  android:label="Make A New Card">
+        </activity>
+        <activity android:name=".MakeTopic"
+                  android:label="Make A New Topic">
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="40dp"
+              android:background="@drawable/gplay">
+
+    <ImageView
+            android:layout_width="300dp"
+            android:layout_height="142dp"
+            android:id="@+id/logo" android:layout_gravity="center_horizontal|top"
+            android:background="@drawable/logo"
+            android:contentDescription="logo" android:layout_marginBottom="30dp"/>
+    <Button android:id="@+id/studyButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:background="@drawable/blue_button" android:text="Study Mode"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+            android:layout_marginBottom="30dp"/>
+    <ImageView
+            android:layout_width="226dp"
+            android:layout_height="0dp"
+            android:id="@+id/logo" android:layout_gravity="center_horizontal|top"
+            android:contentDescription="logo" android:layout_marginBottom="30dp"/>
+    <Button android:id="@+id/playButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:background="@drawable/blue_button" android:text="Play Mode"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/studyButton"/>
+
+</LinearLayout>

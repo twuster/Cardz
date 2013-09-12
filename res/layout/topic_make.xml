@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <EditText
+            android:id="@+id/topic_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="16dip"
+            android:layout_marginTop="16dip"
+            android:layout_marginBottom="20dip"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="Topic Name" />
+
+    <Button android:id="@+id/tconfirmButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:background="@drawable/blue_button" android:text="Confirm"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+            android:layout_marginTop="100dip" android:layout_marginBottom="100dip"/>
+
+</LinearLayout>
