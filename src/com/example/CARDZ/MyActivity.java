@@ -34,7 +34,9 @@ public class MyActivity extends Activity {
         stack.add(new MyPlayCard("Flash Card", "Description", GOLDEN, GOLDEN, true, true));
         stack.add(new MyPlayCard("Flash Card", "Description", GREEN, GREEN, true, true));
         stack.add(new MyPlayCard("Flash Card", "Description", SKYBLUE, SKYBLUE, true, true));
+        for (int i =0; i < 10; i ++){
         stack.add(new MyPlayCard("Flash Card", "Description", HOLOBLUE, HOLOBLUE, true, true));
+        }
     
 
 
