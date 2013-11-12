@@ -30,12 +30,11 @@ public class MyActivity extends Activity {
         CardStack stack = new CardStack();
         stack.setTitle("Flashcards");
         mCardView.addStack(stack);
-
-        mCardView.addCard(new MyPlayCard("Flash Card", "Description", RED, RED, true, true));
-        mCardView.addCard(new MyPlayCard("Flash Card", "Description", GOLDEN, GOLDEN, true, true));
-        mCardView.addCard(new MyPlayCard("Flash Card", "Description", GREEN, GREEN, true, true));
-        mCardView.addCard(new MyPlayCard("Flash Card", "Description", SKYBLUE, SKYBLUE, true, true));
-        mCardView.addCard(new MyPlayCard("Flash Card", "Description", HOLOBLUE, HOLOBLUE, true, true));
+        stack.add(new MyPlayCard("Flash Card", "Description", RED, RED, true, true));
+        stack.add(new MyPlayCard("Flash Card", "Description", GOLDEN, GOLDEN, true, true));
+        stack.add(new MyPlayCard("Flash Card", "Description", GREEN, GREEN, true, true));
+        stack.add(new MyPlayCard("Flash Card", "Description", SKYBLUE, SKYBLUE, true, true));
+        stack.add(new MyPlayCard("Flash Card", "Description", HOLOBLUE, HOLOBLUE, true, true));
     
 
 
