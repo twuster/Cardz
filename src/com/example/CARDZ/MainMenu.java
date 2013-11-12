@@ -33,6 +33,5 @@ public class MainMenu extends Activity {
             }
         });
         ParseAnalytics.trackAppOpened(getIntent());
-        getActionBar().setDisplayShowHomeEnabled(false);
     }
 }
