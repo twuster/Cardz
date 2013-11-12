@@ -48,7 +48,6 @@ public class TopicList extends Activity {
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
-//        registerForContextMenu(lv);
 
 
         final Intent cardIntent = new Intent(this, MyActivity.class);
@@ -128,11 +127,13 @@ public class TopicList extends Activity {
 //                    testObject.saveInBackground();
                     adapter.remove(adapter.getItem(selectedItemPosition));
                     adapter.notifyDataSetChanged();
+                    mode.finish();
                     break;
                 }
                 case R.id.add: {
                     final Intent addIntent = new Intent(getApplication(), MakeCard.class);
                     startActivity(addIntent);
+                    mode.finish();
                     break;
                 }
                 default:
