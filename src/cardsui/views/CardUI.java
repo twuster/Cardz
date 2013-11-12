@@ -217,6 +217,10 @@ public class CardUI extends FrameLayout {
 
 	}
 
+    public void scrollToBottom(){
+        mListView.setSelection(mListView.getCount()-1);
+    }
+
 	public void scrollToCard(int pos) {
 		// int y = 0;
 		try {

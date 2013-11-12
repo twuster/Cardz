@@ -1,6 +1,5 @@
 package cardsui.objects;
 
-import com.example.CARDZ.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import cardsui.Utils;
+import com.example.CARDZ.R;
 
 public abstract class Card extends AbstractCard {
 
@@ -17,6 +17,7 @@ public abstract class Card extends AbstractCard {
 
 	private OnCardSwiped onCardSwipedListener;
 	private OnClickListener mListener;
+    private View.OnLongClickListener mLongListener;
 	protected View mCardLayout;
 
 	public Card() {
@@ -149,6 +150,14 @@ public abstract class Card extends AbstractCard {
 	public void setOnClickListener(OnClickListener listener) {
 		mListener = listener;
 	}
+
+    public View.OnLongClickListener getOnLongClickListener(){
+        return mLongListener;
+    }
+
+    public void setOnLongClickListener(View.OnLongClickListener listener) {
+        mLongListener = listener;
+    }
 
 	public void OnSwipeCard() {
 		if (onCardSwipedListener != null)

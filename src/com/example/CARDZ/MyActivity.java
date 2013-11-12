@@ -2,6 +2,8 @@ package com.example.CARDZ;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import cardsui.objects.CardStack;
 import cardsui.views.CardUI;
 
@@ -15,7 +17,10 @@ public class MyActivity extends Activity {
     private static final String SKYBLUE = "#00d5f2";
     private static final String HOLOBLUE = "#ff33b6ea";
 
+    String[] colorArray = {GOLDEN, RED, GREEN, SKYBLUE, HOLOBLUE};
+
     CardUI mCardView;
+    int numCards;
     /**
      * Called when the activity is first created.
      */
@@ -30,15 +35,24 @@ public class MyActivity extends Activity {
         CardStack stack = new CardStack();
         stack.setTitle("Flashcards");
         mCardView.addStack(stack);
-        stack.add(new MyPlayCard("Flash Card", "Description", RED, RED, true, true));
-        stack.add(new MyPlayCard("Flash Card", "Description", GOLDEN, GOLDEN, true, true));
-        stack.add(new MyPlayCard("Flash Card", "Description", GREEN, GREEN, true, true));
-        stack.add(new MyPlayCard("Flash Card", "Description", SKYBLUE, SKYBLUE, true, true));
-        for (int i =0; i < 10; i ++){
-        stack.add(new MyPlayCard("Flash Card", "Description", HOLOBLUE, HOLOBLUE, true, true));
+        for (int i =0; i < 20; i ++){
+            final MyPlayCard c = new MyPlayCard("Flash Card", "Description", colorArray[i%colorArray.length], colorArray[i%colorArray.length], false, true);
+            c.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Log.d("DEBUG", "CARD CLICKEd");
+                    c.switchDescription();
+                    return true;
+                }
+            });
+            stack.add(c);
+            numCards++;
         }
 
 
         mCardView.refresh();
+        mCardView.scrollToCard(numCards);
+        mCardView.scrollToBottom();
+
     }
 }
