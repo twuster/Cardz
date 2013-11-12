@@ -39,6 +39,7 @@ public class TopicList extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_list);
+        getActionBar().setDisplayShowHomeEnabled(false);
         Parse.initialize(this, "P8vTRXzXsHTGKI9X0g2pZaUwNeE35CKbBtXXDJHG", "zNcWTpND2CF1xSX0XO1HaBXlr0uXw7tiLL1gAY82");
 
         lv = (ListView) findViewById(R.id.topics);

@@ -24,6 +24,8 @@ public class MakeTopic extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_make);
+        getActionBar().setDisplayShowHomeEnabled(false);
+
         Parse.initialize(this, "P8vTRXzXsHTGKI9X0g2pZaUwNeE35CKbBtXXDJHG", "zNcWTpND2CF1xSX0XO1HaBXlr0uXw7tiLL1gAY82");
         topicText = (EditText) findViewById(R.id.topic_name);
         confirmButton = (Button) findViewById(R.id.tconfirmButton);

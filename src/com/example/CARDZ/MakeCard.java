@@ -19,6 +19,8 @@ public class MakeCard extends Activity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_make);
+        getActionBar().setDisplayShowHomeEnabled(false);
+
 
         confirmButton = (Button)findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {

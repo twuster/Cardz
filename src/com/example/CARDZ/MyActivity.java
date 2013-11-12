@@ -23,6 +23,7 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        getActionBar().setDisplayShowHomeEnabled(false);
 
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
@@ -37,7 +38,6 @@ public class MyActivity extends Activity {
         for (int i =0; i < 10; i ++){
         stack.add(new MyPlayCard("Flash Card", "Description", HOLOBLUE, HOLOBLUE, true, true));
         }
-    
 
 
         mCardView.refresh();
