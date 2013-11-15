@@ -14,7 +14,7 @@
             android:background="@drawable/logo"
             android:contentDescription="logo" android:layout_marginBottom="30dp"/>
     <Button android:id="@+id/studyButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:background="@drawable/blue_button" android:text="Study Mode"
+            android:background="@drawable/blue_button" android:text="Start Studying"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
             android:layout_marginBottom="30dp"/>

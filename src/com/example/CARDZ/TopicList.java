@@ -122,9 +122,17 @@ public class TopicList extends Activity {
             int id = item.getItemId();
             switch (id) {
                 case R.id.delete: {
-                    ParseObject testObject = new ParseObject("Topics");
-//                    testObject.remove(adapter.getItem(selectedItemPosition).toString());
-//                    testObject.saveInBackground();
+                    ParseQuery<ParseObject> query = ParseQuery.getQuery("Topics");
+                    query.whereEqualTo("topic", adapter.getItem(selectedItemPosition).toString());
+                    ParseObject o = null;
+                    try{
+                        o = query.getFirst();
+                    }catch(ParseException e){
+                        e.printStackTrace();
+                    }
+                    if ( o !=null){
+                        o.deleteInBackground();
+                    }
                     adapter.remove(adapter.getItem(selectedItemPosition));
                     adapter.notifyDataSetChanged();
                     mode.finish();
@@ -132,6 +140,7 @@ public class TopicList extends Activity {
                 }
                 case R.id.add: {
                     final Intent addIntent = new Intent(getApplication(), MakeCard.class);
+                    addIntent.putExtra("Topic", adapter.getItem(selectedItemPosition).toString());
                     startActivity(addIntent);
                     mode.finish();
                     break;
