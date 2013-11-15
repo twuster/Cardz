@@ -48,13 +48,15 @@ public class TopicList extends Activity {
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
-
-
         final Intent cardIntent = new Intent(this, MyActivity.class);
+
+
+
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                cardIntent.putExtra("topic", adapter.getItem(position).toString());
                 startActivity(cardIntent);
             }
         });

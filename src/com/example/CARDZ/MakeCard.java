@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseRelation;
 
 
 /**
@@ -57,7 +58,9 @@ public class MakeCard extends Activity {
                     ParseObject flashCard = new ParseObject("Flashcards");
                     flashCard.put("question", editTitle.getText().toString());
                     flashCard.put("answer", editDesc.getText().toString());
-                    topicObject.put("cards", flashCard);
+                    ParseRelation<ParseObject> relation = topicObject.getRelation("cards");
+                    flashCard.setObjectId(""+ Math.random()*10000);
+                    relation.add(flashCard);
                     topicObject.saveInBackground();
                     finish();
                 } else {
