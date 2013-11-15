@@ -18,15 +18,22 @@
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
             android:layout_marginBottom="30dp"/>
-    <ImageView
-            android:layout_width="226dp"
-            android:layout_height="0dp"
-            android:id="@+id/logo" android:layout_gravity="center_horizontal|top"
-            android:contentDescription="logo" android:layout_marginBottom="30dp"/>
-    <Button android:id="@+id/playButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:background="@drawable/blue_button" android:text="Play Mode"
+    <!--<ImageView-->
+            <!--android:layout_width="226dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:id="@+id/logo" android:layout_gravity="center_horizontal|top"-->
+            <!--android:contentDescription="logo" android:layout_marginBottom="30dp"/>-->
+    <!--<Button android:id="@+id/playButton" style="@style/ButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/blue_button" android:text="Play Mode"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_below="@id/studyButton"/>-->
+    <com.facebook.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/studyButton"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
 
 </LinearLayout>

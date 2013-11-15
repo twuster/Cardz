@@ -14,6 +14,8 @@ public class MyPlayCard extends Card {
     String title;
     String question;
     String answer;
+    Boolean answerMode;
+    int mode;
 
 	public MyPlayCard(String titlePlay, String description, String color,
 			String titleColor, Boolean hasOverflow, Boolean isClickable) {
@@ -22,6 +24,7 @@ public class MyPlayCard extends Card {
         this.title = titlePlay;
         this.question = description;
         this.answer = "";
+        answerMode = false;
         //initialize();
     }
 
@@ -50,29 +53,26 @@ public class MyPlayCard extends Card {
 		return v;
 	}
 
-//    private void initialize(){
-//        Log.d("DEBUG", "ONCLICKLISTENER SET");
-//        this.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (v == (LinearLayout) v.findViewById(R.id.contentLayout)){
-//                    Log.d("DEBUG", "PRESSING ContENT LAYOUTTT");
-//                } else if (v == (ImageView) v.findViewById(R.id.overflow)){
-//                    Log.d("DEBUG", "PRESSIN OVERFLOW LAYOUTTT");
-//                } else {
-//                    Log.d("DEBUG", "CLICKED SOmethING");
-//                }
-//            }
-//        });
-//    }
-
-    public void switchDescription(){
-        Log.d("DEBUG", "SWITCHING DESCRIPTION");
+    public String switchDescription(){
+        if (mode%4>2){
+            this.description = question;
+            answerMode = false;
+            mode+=1;
+            mode = mode%4;
+            Log.d("DEBUG", "SWITCHING DESCRIPTION TO Question");
+        } else {
+            this.description = answer;
+            answerMode = true;
+            mode+=1;
+            mode = mode%4;
+            Log.d("DEBUG", "SWITCHING DESCRIPTION TO ANSWER");
+        }
+        return this.description;
     }
 
 
     public void setAnswer(String a){
-
+        this.answer = a;
     }
 
 }

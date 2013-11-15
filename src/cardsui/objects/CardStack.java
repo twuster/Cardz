@@ -145,6 +145,10 @@ public class CardStack extends AbstractCard {
 		return cards.get(i);
 	}
 
+    public StackAdapter getmAdapter(){
+        return mAdapter;
+    }
+
 	public String getTitle() {
 		return title;
 	}

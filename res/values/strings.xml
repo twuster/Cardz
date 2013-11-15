@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CARDZ</string>
+    <string name="app_name">Cardz</string>
+    <string name="app_id">365694706908029</string>
+    <string name="get_started">To get started, log in using Facebook</string>
+
 
     <style name="ButtonText">
         <item name="android:layout_width">fill_parent</item>
@@ -16,6 +19,7 @@
         <item name="android:shadowRadius">2</item>
 
     </style>
+
 </resources>
 
 

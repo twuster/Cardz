@@ -32,17 +32,21 @@ public class MyActivity extends Activity {
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
 
-        CardStack stack = new CardStack();
+        final CardStack stack = new CardStack();
         stack.setTitle("Flashcards");
         mCardView.addStack(stack);
         for (int i =0; i < 20; i ++){
             final MyPlayCard c = new MyPlayCard("Flash Card", "Description", colorArray[i%colorArray.length], colorArray[i%colorArray.length], false, true);
+            c.setAnswer("ANSWER");
             c.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Log.d("DEBUG", "CARD CLICKEd");
+                    Log.d("DEBUG", "CARD CLICdKEd");
                     c.switchDescription();
-                    return true;
+                    stack.remove(stack.getCards().size()-1);
+                    stack.add(c);
+                    stack.getmAdapter().notifyDataSetChanged();
+                    return false;
                 }
             });
             stack.add(c);
