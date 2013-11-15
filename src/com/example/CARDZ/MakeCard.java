@@ -34,25 +34,9 @@ public class MakeCard extends Activity {
         editTitle = (EditText) findViewById(R.id.editTitle);
         editDesc = (EditText) findViewById(R.id.editDesc);
 
-
-        confirmButton = (Button)findViewById(R.id.confirmButton);
-        confirmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //To change body of implemented methods use File | Settings | File Templates.
-                finish();
-                if (!(editTitle.getText().toString().equals("")) && !(editDesc.getText().toString().equals(""))) {
-
-                    finish();
-                } else {
-                    Toast.makeText(v.getContext(), "Please Complete All Fields", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
         Bundle extras = getIntent().getExtras();
         if(extras!= null){
-             topic = extras.getString("Topic");
+            topic = extras.getString("Topic");
         }
         Log.d("MAKECARD", "The topic is " + topic);
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Topics");
@@ -64,9 +48,23 @@ public class MakeCard extends Activity {
             e.printStackTrace();;
         }
 
-
-
-
+        confirmButton = (Button)findViewById(R.id.confirmButton);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //To change body of implemented methods use File | Settings | File Templates.
+                if (!(editTitle.getText().toString().equals("")) && !(editDesc.getText().toString().equals(""))) {
+                    ParseObject flashCard = new ParseObject("Flashcards");
+                    flashCard.put("question", editTitle.getText().toString());
+                    flashCard.put("answer", editDesc.getText().toString());
+                    topicObject.put("cards", flashCard);
+                    topicObject.saveInBackground();
+                    finish();
+                } else {
+                    Toast.makeText(v.getContext(), "Please Complete All Fields", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 }
